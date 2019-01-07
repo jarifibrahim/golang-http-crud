@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	pgHost := getEnv("DB_HOST", "localhost")
+	pgHost := getEnv("MY_DATABASE_SERVICE_HOST", "localhost")
 	pgPort := getEnv("DB_PORT", "5432")
 	pgUser := getEnv("DB_USERNAME", "postgres")
 	pgDBname := getEnv("DB_DBNAME", "postgres")

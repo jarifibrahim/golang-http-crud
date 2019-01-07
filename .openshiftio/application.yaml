@@ -97,21 +97,6 @@ objects:
         spec:
           containers:
             - env:
-                - name: DB_USERNAME
-                  valueFrom:
-                    secretKeyRef:
-                      name: my-database-secret
-                      key: user
-                - name: DB_PASSWORD
-                  valueFrom:
-                    secretKeyRef:
-                      name: my-database-secret
-                      key: password
-                - name: DB_HOST
-                  valueFron:
-                    secretKeyRef:
-                      name: my-database-secret
-                      key: host
               readinessProbe:
                 httpGet:
                   path: /api/fruits
@@ -172,14 +157,3 @@ objects:
       labels:
         project: golang-http-crud
         version: '${RELEASE_VERSION}'
-  - apiVersion: v1
-    kind: Secret
-    metadata:
-      name: my-database-secret
-      labels:
-        app: golang-http-crud
-        version: '${RELEASE_VERSION}'
-    stringData:
-      user: postgres
-      password: mysecretpassword
-      host: my-database

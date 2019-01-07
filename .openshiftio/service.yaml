@@ -13,10 +13,10 @@ items:
   spec:
     tags:
     - annotations:
-        openshift.io/imported-from: postgresql/postgresql:9.6
+        openshift.io/imported-from: centos/postgresql-96-centos7
       from:
         kind: DockerImage
-        name: postgresql/postgresql:9.6
+        name: centos/postgresql-96-centos7
       generation: null
       importPolicy: {}
       name: latest
@@ -53,7 +53,7 @@ items:
         - env:
           - name: POSTGRESQL_ADMIN_PASSWORD
             value: mysecretpassword
-          image: postgresql/postgresql:9.6
+          image: centos/postgresql-96-centos7
           name: my-database
           ports:
           - containerPort: 5432
