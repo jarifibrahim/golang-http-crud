@@ -23,7 +23,7 @@ osio {
     def cm = loadResources(file: ".openshiftio/service.yaml")
 
     // performs an s2i build
-    build resources: [resources]
+    build resources: [resources, cm]
     deploy resources: [resources,  cm], env: 'stage'
     deploy resources: [resources,  cm], env: 'run', approval: 'manual'
   }
