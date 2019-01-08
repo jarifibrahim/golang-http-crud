@@ -2,8 +2,6 @@
 
 osio {
 
-  config runtime: 'node'
-
   ci {
 
     def resources = processTemplate(params: [
